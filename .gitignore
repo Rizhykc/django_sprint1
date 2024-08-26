@@ -149,6 +149,7 @@ dmypy.json
 media/
 static/
 
+
 # Testing
 build_tests/
 yap_testing
