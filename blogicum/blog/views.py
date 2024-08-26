@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404
+# from django.shortcuts import get_list_or_404
 
 
 posts = [
@@ -67,7 +68,7 @@ def post_detail(request, id):
     post = posts_data.get(id)
 
     if post is None:
-        return Http404(f'Страницы {id} не существует')
+        raise Http404(f'Страницы {id} не существует')
 
     context = {
         'title': 'Остров отчаянья. 25 октября 1659 года',
