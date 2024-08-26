@@ -64,14 +64,17 @@ def index(request):
 def post_detail(request, id):
 
     template = 'blog/detail.html'
-    try:
-        context = {
-            'title': 'Остров отчаянья. 25 октября 1659 года',
-            'content': 'Остров отчаянья. 25 октября 1659 года',
-            'post': posts_data[id],
-        }
-    except KeyError:
-        raise Http404(f'Страницы {id} не существует')
+    post = posts_data.get(id)
+
+    if post is None:
+        return Http404(f'Страницы {id} не существует')
+
+    context = {
+        'title': 'Остров отчаянья. 25 октября 1659 года',
+        'content': 'Остров отчаянья. 25 октября 1659 года',
+        'post': posts_data[id],
+
+    }
 
     return render(request, template, context)
 
