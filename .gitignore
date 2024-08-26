@@ -147,7 +147,7 @@ dmypy.json
 
 # папки со статикой и медиа
 media/
-static/**
+static/
 
 # Testing
 build_tests/
