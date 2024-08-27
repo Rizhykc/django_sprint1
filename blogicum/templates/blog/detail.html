@@ -1,9 +1,4 @@
 {% extends "base.html" %}
 {% block content %}
-<article>
-    {% include "includes/post_card.html" %}        
-        <p>{{ post.text }}</p>
-</article>
+    {% include "includes/post_card.html" with short_post=post.text%}
 {% endblock content %}
-                        
-
